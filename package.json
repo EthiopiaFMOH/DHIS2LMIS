@@ -1,0 +1,12 @@
+{
+  "name": "dhis2lis",
+  "version": "1.0.0",
+  "description": "Order and result data exchange in json and HL7",
+  "main": "index.js",
+  
+  "scripts": {
+    "start": "node lib/index.js"
+  },
+  "author": "Biniyam Asfaw",
+  "license": "ISC"
+}

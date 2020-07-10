@@ -1,0 +1,338 @@
+{
+    "urn": "urn",
+    "version": "0.0.1",
+    "name": "JSON2HL7",
+    "description": "JSON to HL7 and HL7 to JSON adapter mediator",
+    "defaultChannelConfig": [
+      {
+        "name": "JSON2HL7",
+        "urlPattern": "/adapt",
+        "alerts": [],
+        "txRerunAcl": [],
+        "txViewFullAcl": [],
+        "txViewAcl": [],
+        "properties": [],
+        "matchContentTypes": [],
+        "routes": [
+          {
+            "name": "adapt route",
+            "host": "localhost",
+            "port": "3000",
+            "primary": true,
+            "type": "http"
+          }
+        ],
+        "allow": [
+          "admin"
+        ],
+        "type": "http"
+      }
+    ],
+    "endpoints": [
+      {
+        "name": "fetch route",
+        "host": "localhost",
+        "path": "/",
+        "port": "3001",
+        "primary": true,
+        "type": "http"
+      }
+    ],
+    "configDefs": [
+      {
+        "param": "sendingfacility",
+        "displayName": "Sending Facility",
+        "description": "To identify laboratory responsible for the results",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "receivinglaboratory",
+        "displayName": "Receiving Laboratory",
+        "description": "To identify laboratory responsible for the results",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "messagedatetime",
+        "displayName": "DateTime of Message",
+        "description": "Record of the date and time the electronic message was created",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "externalpatientid",
+        "displayName": "External Patient ID",
+        "description": "Customer assigned patient Identifier",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "labassignedpatientid",
+        "displayName": "Lab Assigned Patient ID",
+        "description": "Lab assigned patient number",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "patientlastname",
+        "displayName": "Patient Last Name",
+        "description": "Patient Demographics",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "patientfirstname",
+        "displayName": "Patient First Name",
+        "description": "Patient Demographics",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "patientmiddlename",
+        "displayName": "Patient Middle Name Initial",
+        "description": "Patient Demographics",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "patientdateofbirth",
+        "displayName": "Patient Date of Birth",
+        "description": "Patient Demographics",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "patientsex",
+        "displayName": "Patient Date of Birth",
+        "description": "Patient Demographics",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "patientaddress",
+        "displayName": "Patient Address",
+        "description": "Patient Demographics",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "patientcity",
+        "displayName": "Patient City",
+        "description": "Patient Demographics",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "patientstate",
+        "displayName": "Patient State or Province",
+        "description": "Patient Demographics",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "patientzip",
+        "displayName": "Patient Zip or Postal Code",
+        "description": "Patient Demographics",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "patientphone",
+        "displayName": "Patient Home Phone Number",
+        "description": "Patient Demographics",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "sequencenumber",
+        "displayName": "Sequence Number",
+        "description": "Sequence Numeber",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "priorlocation",
+        "displayName": "Prior Patient Location",
+        "description": "Prior Patient Location",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "physicianid",
+        "displayName": "Physician ID",
+        "description": "Physician ID",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "physicianlastname",
+        "displayName": "Physician Last Name",
+        "description": "Physician Last Name",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "ordercontrol",
+        "displayName": "Order Control",
+        "description": "To identify new orders",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "specimenid",
+        "displayName": "Unique Foreign Accession or Specimen ID",
+        "description": "Customer specific accessioning or specimen identification number",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "transactiondatetime",
+        "displayName": "Date/Time of Transaction",
+        "description": "Record of the date and time the electronic order was created",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "provideridno",
+        "displayName": "Ordering Provider ID Number",
+        "description": "Physician/Provider identifier and required for certain billing options",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "providerlastname",
+        "displayName": "Ordering Provider Last Name",
+        "description": "Physician/Provider identifier and required for certain billing options",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "providerfirstnameinitial",
+        "displayName": "Ordering Provider First Name Initial",
+        "description": "Physician/Provider identifier and required for certain billing options",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "sourcetable",
+        "displayName": "Source Table",
+        "description": "Identification of Ordering Provider ID Number",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "obrsequencenumber",
+        "displayName": "OBR Sequence Number",
+        "description": "To identify the number of OBR segments contained within the order file",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "labspecimennumber",
+        "displayName": "Lab Specimen Number",
+        "description": "Assigned specimen number",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "observationbatteryid",
+        "displayName": "Observation Battery Identifier",
+        "description": "Test number ordered",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "observationbatterytext",
+        "displayName": "Observation Battery Text",
+        "description": "Name of Test ordered",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "specimentcollectiondatetime",
+        "displayName": "Observation/Specimen Collection Date/Time",
+        "description": "Record of the date and time the specimen was collected",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "obrphysicianid",
+        "displayName": "Observation/Specimen Collection Physician ID",
+        "description": "Observation/Specimen Collection Physician ID",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "obrphysicianlastname",
+        "displayName": "Observation/Specimen Collection Physician Last Name",
+        "description": "Observation/Specimen Collection Physician Last Name",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "obrphysicianfirstnameinitial",
+        "displayName": "Observation/Specimen Collection Physician First Name Initial",
+        "description": "Observation/Specimen Collection Physician First Name Initial",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "obrphysicianmiddlenameinitial",
+        "displayName": "Observation/Specimen Collection Physician Middle Name Initial",
+        "description": "Observation/Specimen Collection Physician Middle Name Initial",
+        "type": "string",
+        "template": []
+      },
+      {
+        "param": "observationreportdatetime",
+        "displayName": "Date/Time Observation Reported",
+        "description": "Identify the date and time the results were sent",
+        "type": "string",
+        "template": []
+      }
+      
+      
+    ],
+    "config": {
+      "sendingfacility": "orgUnit",
+      "receivinglaboratory": "receiving_laboratory",
+      "messagedatetime": "created",
+      
+      "externalpatientid": "suspect_id",
+      "labassignedpatientid": "suspect_id",
+      "patientlastname": "last_name",
+      "patientfirstname": "first_name",
+      "patientmiddlename": "middle_name",
+      "patientdateofbirth": "date_of_birth",
+      "patientsex": "sex",
+      "patientaddress": "address_woreda",
+      "patientcity": "address_zone",
+      "patientstate": "address_region",
+      "patientzip": "",
+      "patientphone": "phone_local",
+
+      "sequencenumber": "",
+      "priorlocation": "orgUnit",
+      "physicianid": "requesting_physician",
+      "physicianlastname": "requesting_physician",
+      "ordercontrol": "Community_patient_classification",
+      "specimenid": "specimen_id",
+      "transactiondatetime": "created",
+      "provideridno": "requesting_physician",
+      "providerlastname": "requesting_physician",
+      "providerfirstnameinitial": "",
+      "sourcetable": "",
+      "obrsequencenumber": "",
+      "labspecimennumber": "specimen_id",
+      "observationbatteryid": "type_of_test",
+      "observationbatterytext": "type_of_test",
+      "specimentcollectiondatetime": "specimen_collection_time",
+      "obrphysicianid": "requesting_physician",
+      "obrphysicianlastname": "requesting_physician",
+      "obrphysicianfirstnameinitial": "",
+      "obrphysicianmiddlenameinitial": "",
+      "observationreportdatetime": "specimen_collection_time"      
+      
+    }
+  }
