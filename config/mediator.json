@@ -316,6 +316,7 @@
       "priorlocation": "orgUnit",
       "physicianid": "requesting_physician",
       "physicianlastname": "requesting_physician",
+
       "ordercontrol": "Community_patient_classification",
       "specimenid": "specimen_id",
       "transactiondatetime": "created",
@@ -323,6 +324,7 @@
       "providerlastname": "requesting_physician",
       "providerfirstnameinitial": "",
       "sourcetable": "",
+      
       "obrsequencenumber": "",
       "labspecimennumber": "specimen_id",
       "observationbatteryid": "type_of_test",
