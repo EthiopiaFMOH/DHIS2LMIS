@@ -290,11 +290,19 @@
         "description": "Identify the date and time the results were sent",
         "type": "string",
         "template": []
+      },
+      {
+        "param": "DHIS2baseurl",
+        "displayName": "DHIS2 Base URL",
+        "description": "Holds the base url for the DHIS2 application",
+        "type": "string",
+        "template": []
       }
       
       
     ],
     "config": {
+      "DHIS2baseurl": "",
       "sendingfacility": "orgUnit",
       "receivinglaboratory": "receiving_laboratory",
       "messagedatetime": "created",
