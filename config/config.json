@@ -1,15 +1,15 @@
 {
   "port": 4003,
   "heartbeat": true,
-  "register": false,
+  "register": true,
   "host": "",
   "endpoints": [],
   "log_level": "info",
   "statsd": {},
   "api": {
-    "apiURL": "https://localhost:8080",
+    "apiURL": "https://0.0.0.0:8080",
     "username": "root@openhim.org",
-    "password": "JissonofG",
+    "password": "password",
     "trustSelfSigned": true
   },
   "mediatorConf": {

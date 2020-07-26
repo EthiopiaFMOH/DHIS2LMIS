@@ -6,7 +6,7 @@
     "defaultChannelConfig": [
       {
         "name": "JSON2HL7",
-        "urlPattern": "/adapt",
+        "urlPattern": "/order",
         "alerts": [],
         "txRerunAcl": [],
         "txViewFullAcl": [],
@@ -16,8 +16,8 @@
         "routes": [
           {
             "name": "adapt route",
-            "host": "localhost",
-            "port": "3000",
+            "host": "3.15.193.117",
+            "port": "15000",
             "primary": true,
             "type": "http"
           }
@@ -31,9 +31,9 @@
     "endpoints": [
       {
         "name": "fetch route",
-        "host": "localhost",
+        "host": "0.0.0.0",
         "path": "/",
-        "port": "3001",
+        "port": "15000",
         "primary": true,
         "type": "http"
       }
@@ -302,7 +302,7 @@
       
     ],
     "config": {
-      "DHIS2baseurl": "",
+      "DHIS2baseurl": "http://18.220.248.153:3000/api/resultLIS",
       "sendingfacility": "orgUnit",
       "receivinglaboratory": "receiving_laboratory",
       "messagedatetime": "created",
